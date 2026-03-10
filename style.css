@@ -7,7 +7,7 @@
 body{
     padding-top:100px;
     background:#050505;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 /* HEADER */
@@ -31,8 +31,11 @@ body{
 }
 
 .logo {
+    display: flex;
     font-size:28px;
     font-weight:bold;
+    align-items: center;
+    gap: 10px;
 }
 
 .logo-hv {
@@ -41,6 +44,76 @@ body{
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientAnimation 8s ease infinite;
+}
+
+/* BOTÃO DARK/LIGHT */
+
+.theme-toggle {
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.2);
+    background:rgba(255,255,255,0.05);
+    color:white;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    transition:all .3s ease;
+}
+
+.theme-toggle:hover {
+    background:rgba(255,255,255,0.15);
+}
+
+/* BOTAO MODO CLARO */
+
+body.light-mode {
+    background:#ffffff;
+}
+
+body.light-mode .hero {
+    background:#ffffff;
+}
+
+body.light-mode .hero-content h1 {
+    background-color: #111;
+}
+
+body.light-mode .hero-content p {
+    color:#0505052a;
+}
+
+body.light-mode .nav-container {
+    background:rgba(0,0,0,0.04);
+    border:1px solid rgba(0,0,0,0.08);
+}
+
+body.light-mode .nav-menu a {
+    color:#444;
+}
+
+body.light-mode .nav-menu a:hover {
+    color:#000;
+}
+
+body.light-mode .time {
+    color:#444;
+}
+
+body.light-mode .theme-toggle {
+    color:#000;
+    border:1px solid rgba(0,0,0,0.2);
+}
+
+body.light-mode .project-header h3,
+body.light-mode .tags span {
+    color:#111;
+}
+
+body.light-mode .project-info p {
+    color: #05050581;
 }
 
 /* Animação do gradiente */
@@ -112,7 +185,7 @@ body{
 }
 
 
-/* Seção Hero próxima do topo */
+/* Seção Hero */
 .hero {
     width: 100%;
     min-height: 30vh; /* altura menor, para ficar próximo ao menu */
@@ -129,9 +202,9 @@ body{
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    font-weight: 900;
-    background-color: #ffffff33;
+    font-size: 90px;
+    font-weight: 1000;
+    background-color: #f8f8f8;
     background-size: 800% 800%;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -140,7 +213,69 @@ body{
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    color: #fff;
+    font-size: 80px;
+    font-weight: 1000;
+    color: #ffffff33;
     opacity: 0.8;
+}
+
+/* Projetos */
+
+.projects {
+    display:grid;
+    max-width:1600px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding:80px 20px;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.project-card {
+    display:flex;
+    flex-direction:column;
+}
+
+.project-media img {
+    width: 827.5px;
+    height: 514.31px;
+    border-radius:8px;
+}
+
+.project-info {
+    margin-top:16px;
+}
+
+.project-header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.project-header h3 {
+    color: #fff;
+    font-size:20px;
+    font-weight:600;
+}
+
+.tags span {
+    color: #fff;
+    font-size:11px;
+    border:1px solid #ccc;
+    padding:4px 8px;
+    border-radius:4px;
+    margin-left:6px;
+}
+
+.project-info p {
+    margin-top:8px;
+    color:#fff;
+    font-size:14px;
+}
+
+@media (max-width:768px) {
+    .projects{
+        grid-template-columns:1fr;
+    }
 }
