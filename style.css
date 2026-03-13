@@ -138,19 +138,6 @@ body.light-mode .project-info p {
     transition:all 0.45s cubic-bezier(.4,0,.2,1);
 }
 
-.nav-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.circle {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.25);
-}
-
 /* MENU CENTRAL */
 .nav-menu {
     display: flex;
@@ -184,6 +171,15 @@ body.light-mode .project-info p {
     color:#7a7a7a;
 }
 
+/* CONTAINER */
+
+.container {
+    display: block;
+    align-content: center;
+    margin: auto;
+    max-width: 950px;
+    padding-bottom: 1rem;
+}
 
 /* Seção Hero */
 .hero {
@@ -219,18 +215,86 @@ body.light-mode .project-info p {
     opacity: 0.8;
 }
 
+/* SEÇÃO TRAJETÓRIA */
+
+.journey {
+    width:100%;
+    display:grid;
+    justify-content:center;
+    align-items: center;
+    padding: 60px 5px;
+}
+
+.journey-container {
+    width:100%;
+    max-width:1200px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap: 140px;
+}
+
+.journey-col h4{
+    font-size:13px;
+    letter-spacing:1px;
+    color:#6b6b6b;
+    margin-bottom:12px;
+}
+
+.journey-col p{
+    font-size:14px;
+    color:#ffffff;
+    margin-bottom:6px;
+}
+
+/* LIGHT MODE */
+
+body.light-mode .journey-col p{
+    color:#111;
+}
+
+body.light-mode .journey-col h4{
+    color:#666;
+}
+
+/* RESPONSIVO */
+
+@media (max-width:768px){
+
+    .journey-container{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+}
+
 /* Projetos */
 
 .projects {
-    display:grid;
+    display: grid;
     max-width:1600px;
     align-items: center;
     justify-content: center;
-    margin: auto;
-    padding:80px 20px;
-    grid-template-columns:1fr 1fr;
+    margin: 0;
+    padding: 40px 10px;
     gap:60px;
 }
+
+/* TITULO PROJETOS */
+
+.projects-title {
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.projects-title h1 {
+    font-size: 40px;
+    font-weight: 1000;
+    color: #6b6b6b;
+    opacity: 0.8;
+}
+
+/* CARD PROJETOS */
 
 .project-card {
     display:flex;
@@ -238,9 +302,9 @@ body.light-mode .project-info p {
 }
 
 .project-media img {
-    width: 827.5px;
-    height: 514.31px;
-    border-radius:8px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 .project-info {
@@ -280,31 +344,99 @@ body.light-mode .project-info p {
     }
 }
 
+/* CONTATO */
 
-/* Seção Sobre */
-.sobre {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 20px;
-    gap: 40px;
+.contact{
+    width:100%;
+    padding:40px 10px;
 }
 
-.sobre {
-    max-width: 800px;
+.contact-title{
+    display:flex;
+    align-items:center;
+}
+
+.contact-title h2{
+    font-size:36px;
+    color:#fff;
+}
+
+.social-links{
+    display:flex;
+    gap:20px;
+    margin:25px 0 40px;
+}
+
+.social-links a{
+    font-size:15px;
+    color:#fff;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.social-links a:hover{
+    opacity:0.7;
+}
+
+.copyright{
+    font-size:14px;
+    color:#6b6b6b;
+}
+
+
+
+/* ------------------------------------------------------------- */
+
+/* SEÇÃO ABOUT */
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 0;
+    gap: 80px;
+}
+
+.about-intro {
+    max-width: 500px;
+}
+
+.about-intro h1 {
+    font-size: 64px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+#apresentacao {
+    color: #6b6b6b;
+}
+
+#apresentacao-nome {
+    padding-bottom: 35px;
+}
+
+.about-intro p {
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.7;
+}
+
+.about-me img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 900px) {
+
+.about {
+    flex-direction: column;
     text-align: center;
 }
 
-.sobre h2 {
-    font-size: 36px;
-    color: #ffffff;
-    margin-bottom: 20px;
+.about-intro {
+    max-width: 100%;
 }
 
-.sobre p {
-    font-size: 18px;
-    color: #ffffff;
-    line-height: 1.6;
 }
-
