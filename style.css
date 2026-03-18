@@ -425,7 +425,7 @@ body.light-mode .journey-col h4{
     width: 100%;
     border-radius: 12px;
     object-fit: cover;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 20px 40px rgba(122, 122, 122, 0.4);
 }
 
 @media (max-width: 900px) {
